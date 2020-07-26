@@ -1,0 +1,23 @@
+{
+  "name": "exteon/identity-cache",
+  "description": "Identity cache implementation",
+  "type": "library",
+  "homepage": "https://github.com/exteon/identity-cache",
+  "authors": [
+    {
+      "name": "Dinu Marina"
+    }
+  ],
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "require": {
+    "wikimedia/composer-merge-plugin": "^1.4"
+  },
+  "extra": {
+    "merge-plugin": {
+      "include": [
+        "composer/common.json",
+        "composer/prod.json"
+      ]
+    }
+  }
+}

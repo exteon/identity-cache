@@ -1,0 +1,11 @@
+{
+  "require": {
+      "exteon/memory-helper": "^1.0.0"
+  },
+  "repositories": {
+    "memory-helper": {
+      "type": "vcs",
+      "url": "https://github.com/exteon/memory-helper"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "require": {
+      "exteon/memory-helper": "dev-master"
+  },
+  "repositories": {
+    "memory-helper": {
+      "type": "path",
+      "url": "../memory-helper"
+    }
+  }
+}
