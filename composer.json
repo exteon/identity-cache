@@ -9,15 +9,30 @@
     }
   ],
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
-  "require": {
-    "wikimedia/composer-merge-plugin": "^1.4"
+  "repositories": {
+    "memory-helper": {
+      "type": "vcs",
+      "url": "https://github.com/exteon/memory-helper"
+    }
   },
-  "extra": {
-    "merge-plugin": {
-      "require": [
-        "composer/common.json",
-        "composer/prod.json"
+  "require": {
+      "exteon/memory-helper": "^1.0.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Exteon\\IdentityCache\\": [
+        "interfaces",
+        "src"
       ]
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "": "tests"
+    }
   }
+
 }
