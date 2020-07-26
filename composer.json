@@ -14,7 +14,7 @@
   },
   "extra": {
     "merge-plugin": {
-      "include": [
+      "require": [
         "composer/common.json",
         "composer/prod.json"
       ]
