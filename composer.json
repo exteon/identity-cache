@@ -3,6 +3,7 @@
   "description": "Identity cache implementation",
   "type": "library",
   "homepage": "https://github.com/exteon/identity-cache",
+  "version": "1.0.2",
   "authors": [
     {
       "name": "Dinu Marina"
