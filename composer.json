@@ -8,15 +8,9 @@
       "name": "Dinu Marina"
     }
   ],
-  "license": "https://www.apache.org/licenses/LICENSE-2.0",
-  "repositories": {
-    "memory-helper": {
-      "type": "vcs",
-      "url": "https://github.com/exteon/memory-helper"
-    }
-  },
+  "license": "Apache-2.0",
   "require": {
-      "exteon/memory-helper": "^1.0.0"
+      "exteon/memory-helper": "^1.0.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^8.5"
