@@ -27,6 +27,8 @@
     "psr-4": {
       "": "tests"
     }
+  },
+  "suggest": {
+    "ext-weakref": "*"
   }
-
 }
