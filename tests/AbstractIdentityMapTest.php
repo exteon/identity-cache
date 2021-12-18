@@ -6,14 +6,21 @@
      * @license https://www.apache.org/licenses/LICENSE-2.0
      */
 
+    namespace Test\Exteon\IdentityCache;
+
     use Exteon\IdentityCache\IIdentityMap;
     use PHPUnit\Framework\TestCase;
+    use stdClass;
 
     abstract class AbstractIdentityMapTest extends TestCase {
         const TRY_KEY = 'foo';
 
         /** @var IIdentityMap */
         protected $identity;
+
+        public function testCanUse() {
+            self::assertTrue($this->identity::canUse());
+        }
 
         public function testSet(): void {
             $object = new stdClass();

@@ -6,11 +6,21 @@
      * @license https://www.apache.org/licenses/LICENSE-2.0
      */
 
+    namespace Test\Exteon\IdentityCache;
+
     use Exteon\IdentityCache\WeakRef\IdentityMap;
     use PHPUnit\Framework\TestCase;
     use \Exteon\IdentityCache\WeakRef\IdentityCache;
+    use stdClass;
 
     class documentationTest extends TestCase {
+
+        protected function setUp(): void {
+            if (!class_exists('Weakref')) {
+                $this->markTestSkipped('Extension Weakref is not present');
+            }
+            parent::setUp();
+        }
 
         public function testSnippet1():void {
             $map = new IdentityMap();

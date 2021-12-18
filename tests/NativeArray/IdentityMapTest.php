@@ -6,10 +6,10 @@
      * @license https://www.apache.org/licenses/LICENSE-2.0
      */
 
-    namespace NativeArray;
+    namespace Test\Exteon\IdentityCache\NativeArray;
 
-    use AbstractIdentityMapTest;
     use Exteon\IdentityCache\NativeArray\IdentityMap;
+    use Test\Exteon\IdentityCache\AbstractIdentityMapTest;
 
     class IdentityMapTest extends AbstractIdentityMapTest {
         protected function getTestedClass(): string {

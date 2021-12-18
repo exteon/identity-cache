@@ -39,4 +39,9 @@
         {
             return array_keys((array)$this);
         }
+
+        public static function canUse(): bool
+        {
+            return true;
+        }
     }

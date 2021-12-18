@@ -6,6 +6,8 @@
      * @license https://www.apache.org/licenses/LICENSE-2.0
      */
 
+    namespace Test\Exteon\IdentityCache;
+
     use Exteon\IdentityCache\IIdentityCache;
 
     abstract class AbstractIdentityCacheTest extends AbstractIdentityMapTest {

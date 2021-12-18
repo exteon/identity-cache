@@ -10,7 +10,6 @@
 
     use ArrayAccess;
     use Iterator;
-    use ReturnTypeWillChange;
 
     interface IIdentityMap extends ArrayAccess, Iterator {
         /**
@@ -34,4 +33,9 @@
          * @return array<bool|float|int|string>
          */
         public function getKeys(): array;
+
+        /**
+         * @return bool
+         */
+        public static function canUse(): bool;
     }

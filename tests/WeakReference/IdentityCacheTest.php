@@ -1,8 +1,9 @@
 <?php
-    namespace Test\Exteon\IdentityCache\Weakref;
+    namespace Test\Exteon\IdentityCache\WeakReference;
 
-    use Exteon\IdentityCache\WeakRef\IdentityCache;
+    use Exteon\IdentityCache\WeakReference\IdentityCache;
     use Test\Exteon\IdentityCache\AbstractWeakrefIdentityCacheTest;
+    use WeakReference;
 
     class IdentityCacheTest extends AbstractWeakrefIdentityCacheTest {
 
@@ -14,8 +15,8 @@
         }
 
         protected function setUp(): void {
-            if (!class_exists('Weakref')) {
-                $this->markTestSkipped('Extension Weakref is not present');
+            if (!class_exists(WeakReference::class)) {
+                $this->markTestSkipped('Extension Weakreference is not present');
             }
             parent::setUp();
             $this->identity = $this->getIdentity(

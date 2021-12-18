@@ -38,10 +38,13 @@ freed.
 
 ## Requirements
 
-* PHP 7.2
-* The [Weakref](https://pecl.php.net/package/Weakref) extension; support for 
-  PHP 7.4's [Weakreference](https://www.php.net/manual/en/class.weakreference.php)
-  is NOT yet implemented.
+* For PHP > 7.4, use `Exteon\IdentityCache\Weakreference\IdentityMap`, 
+  `Exteon\IdentityCache\Weakreference\IdentityMap` which use 
+  [Weakreference](https://www.php.net/manual/en/class.weakreference.php)
+* For PHP < 7.4, the [Weakref](https://pecl.php.net/package/Weakref) extension 
+  is needed. Then use `Exteon\IdentityCache\Weakref\IdentityMap`, 
+  `Exteon\IdentityCache\Weakref\IdentityMap`
+* PHP < 7.2 not supported
  
 ## Usage
 
@@ -55,7 +58,7 @@ composer require exteon/identity-cache
 ### IdentityMap
 
 ```php
-$map = new \Exteon\IdentityCache\WeakRef\IdentityMap();
+$map = new \Exteon\IdentityCache\WeakReference\IdentityMap();
 
 $instance = new stdClass();
 $map[1] = $instance;
@@ -78,7 +81,7 @@ assert(isset($map[1]) === false);
 ### IdentityCache
 
 ```php
-$cache = new \Exteon\IdentityCache\WeakRef\IdentityCache([
+$cache = new \Exteon\IdentityCache\WeakReference\IdentityCache([
     'trigger' => 'maxRetainedObjects',
     'maxRetainedObjects' => 1,
     'purgeStrategy' => 'popularity',
@@ -126,12 +129,12 @@ assert(isset($cache[2]) === false);
 #### Configuration
 
 An associative array can be passed to the constructor of 
-`\Exteon\IdentityCache\WeakRef\IdentityCache`. Example usage, default and 
+`\Exteon\IdentityCache\WeakReference\IdentityCache`. Example usage, default and 
 possible values are shown below. If a configuration option is not passed to the 
 constructor, its default value will be used:
 
 ```php
-use \Exteon\IdentityCache\WeakRef\IdentityCache;
+use \Exteon\IdentityCache\WeakReference\IdentityCache;
 
 $cache = new IdentityCache([
     //  Specifies the condition that triggers the cache to purge unused 
@@ -191,7 +194,7 @@ config option. This is a very sensitive float value that can be computed using
 the `getPopularityDecay()` method, as such:
 
 ```php
-$popularityDecay = \Exteon\IdentityCache\WeakRef\IdentityCache::getPopularityDecay(
+$popularityDecay = \Exteon\IdentityCache\WeakReference\IdentityCache::getPopularityDecay(
     1000,   //  initialPopularity
     10000,  //  rounds
     2       //  targetPopularity
@@ -215,7 +218,7 @@ persisted later in a write-behind strategy scenario.
 
 Example:
 ```php
-$cache = new \Exteon\IdentityCache\WeakRef\IdentityCache([
+$cache = new \Exteon\IdentityCache\WeakReference\IdentityCache([
     'trigger' => 'maxRetainedObjects',
     'maxRetainedObjects' => 0
 ]);
@@ -254,13 +257,14 @@ manually by calling the `gc()` method on `IdentityCache`.
 ### Native PHP array replacements
 
 If the `Weakref` extension is not available, or for testing purposes, or for
-an emergency in case the Weakref implementation is failing, we provide regular
-array-based replacements for the Weakref `IdentityMap` and `IdentityCache`:
+an emergency in case the Weakref / WeakReference implementation is failing, we 
+provide regular array-based replacements for the Weakref `IdentityMap` and 
+`IdentityCache`:
 
 `\Exteon\IdentityCache\NativeArray\IdentityMap`  
 `\Exteon\IdentityCache\NativeArray\IdentityCache`
 
-These implement the same interfaces as their WeakRef counterparts, so they can
-be dropped in their place, but they will not implement any reference releasing
-functionality: objects added will remain in the `IdentityMap` or `IdentityCache`
-until explicitly `unset()`.
+These implement the same interfaces as their WeakRef / WeakReference 
+counterparts, so they can be dropped in their place, but they will not implement 
+any reference releasing functionality: objects added will remain in the 
+`IdentityMap` or `IdentityCache` until explicitly `unset()`.

@@ -6,11 +6,11 @@
      * @license https://www.apache.org/licenses/LICENSE-2.0
      */
 
-    namespace NativeArray;
+    namespace Test\Exteon\IdentityCache\NativeArray;
 
-    use AbstractIdentityCacheTest;
     use Exteon\IdentityCache\NativeArray\IdentityCache;
     use stdClass;
+    use Test\Exteon\IdentityCache\AbstractIdentityCacheTest;
 
     class IdentityCacheTest extends AbstractIdentityCacheTest {
 

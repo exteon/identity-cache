@@ -13,7 +13,6 @@
 
     class IdentityMap extends ArrayIterator implements IIdentityMap
     {
-
         /**
          * IdentityMap constructor.
          */
@@ -33,5 +32,10 @@
         public function getKeys(): array
         {
             return array_keys((array)$this);
+        }
+
+        public static function canUse(): bool
+        {
+            return true;
         }
     }
