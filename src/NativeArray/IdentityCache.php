@@ -11,22 +11,32 @@
     use ArrayIterator;
     use Exteon\IdentityCache\IIdentityCache;
 
-    class IdentityCache extends ArrayIterator implements IIdentityCache {
+    class IdentityCache extends ArrayIterator implements IIdentityCache
+    {
 
         /**
          * IdentityCache constructor.
          * @param array $config
          */
-        public function __construct(array $config = []) {
+        public function __construct(array $config = [])
+        {
             parent::__construct();
         }
 
-        function gc(): void {
+        function gc(): void
+        {
         }
 
-        function acquire($offset): void {
+        function acquire($offset): void
+        {
         }
 
-        function release($offset): void {
+        function release($offset): void
+        {
+        }
+
+        public function getKeys(): array
+        {
+            return array_keys((array)$this);
         }
     }

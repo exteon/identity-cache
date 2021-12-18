@@ -10,6 +10,7 @@
 
     use ArrayAccess;
     use Iterator;
+    use ReturnTypeWillChange;
 
     interface IIdentityMap extends ArrayAccess, Iterator {
         /**
@@ -18,7 +19,7 @@
          * @param bool|float|int|string $offset
          * @return mixed
          */
-        public function acquire(string $offset): void;
+        public function acquire($offset): void;
 
         /**
          * Releases a key previously acquired via {@see acquire()} back to the
@@ -27,5 +28,10 @@
          * @param bool|float|int|string $offset
          * @return mixed
          */
-        public function release(string $offset): void;
+        public function release($offset): void;
+
+        /**
+         * @return array<bool|float|int|string>
+         */
+        public function getKeys(): array;
     }

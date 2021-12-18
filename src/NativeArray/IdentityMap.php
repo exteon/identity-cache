@@ -11,18 +11,27 @@
     use ArrayIterator;
     use Exteon\IdentityCache\IIdentityMap;
 
-    class IdentityMap extends ArrayIterator implements IIdentityMap {
+    class IdentityMap extends ArrayIterator implements IIdentityMap
+    {
 
         /**
          * IdentityMap constructor.
          */
-        public function __construct() {
+        public function __construct()
+        {
             parent::__construct();
         }
 
-        function acquire($offset): void {
+        function acquire($offset): void
+        {
         }
 
-        function release($offset): void {
+        function release($offset): void
+        {
+        }
+
+        public function getKeys(): array
+        {
+            return array_keys((array)$this);
         }
     }
