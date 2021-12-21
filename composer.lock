@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04eada982d60330a0e3d75f722b8f9ba",
+    "content-hash": "817f36b4413653ba9bbfc89d7a1504be",
     "packages": [
         {
             "name": "exteon/memory-helper",

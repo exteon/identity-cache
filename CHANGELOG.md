@@ -1,3 +1,9 @@
+## 1.2.0
+
+#### New features
+
+* Added `Factory` class to provide best available version for objects
+
 ## 1.1.0
 
 #### New features
