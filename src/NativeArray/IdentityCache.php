@@ -17,6 +17,7 @@
         /**
          * IdentityCache constructor.
          * @param array $config
+         * @noinspection PhpUnusedParameterInspection
          */
         public function __construct(array $config = [])
         {

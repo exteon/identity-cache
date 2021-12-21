@@ -14,17 +14,16 @@
     abstract class AIdentityMap implements IIdentityMap
     {
 
-        /** @var (WeakRef|mixed)[] */
-        private $collection = [];
+        /** @var array<WeakReference|mixed> */
+        private array $collection = [];
 
         /** @var bool */
-        private $isStart = true;
+        private bool $isStart = true;
 
         /** @var bool */
-        private $isEnd = false;
+        private bool $isEnd = false;
 
-        /** @var array */
-        private $acquired = [];
+        private array $acquired = [];
 
         /**
          * Checks if the Weakref map can be used. If the Weakref extension is
@@ -174,7 +173,7 @@
         }
 
         /**
-         * @return bool|float|int|string|null
+         * @return float|int|string|null
          */
         public function key()
         {

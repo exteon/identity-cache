@@ -174,7 +174,7 @@
         }
 
         /**
-         * @return bool|float|int|string|null
+         * @return float|int|string|null
          */
         public function key()
         {
